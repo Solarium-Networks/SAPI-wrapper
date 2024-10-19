@@ -8,7 +8,7 @@ username = input("Enter Scratch username: ")
 
 while True:
   # get api wrapping utility
-  utility = input("Utility [user-projects-wrapper, exit]: ")
+  utility = input("Utility [user-projects-wrapper, follower-wrapping-utility, exit]: ")
   
   if utility == "user-projects-wrapper":
     # url
@@ -44,7 +44,8 @@ while True:
         print(f"Remixes: {remixes}")
         print("=" * 50)
         print("\n")
-  if utility == "follower-wrapping-utility":
+  
+  elif utility == "follower-wrapping-utility":
     # url
     url = f"https://api.scratch.mit.edu/users/{username}/followers/"
     # get data
@@ -65,7 +66,9 @@ while True:
         # If you want to fetch and display more follower details, add additional fields here
         print("=" * 50)
         print("\n")
-    if utility == "exit":
-      os.exit()
-    else:
-      print("thats not an option right now!")
+    
+  elif utility == "exit":
+    os.exit()
+    
+  else:
+    print("thats not an option right now!")
