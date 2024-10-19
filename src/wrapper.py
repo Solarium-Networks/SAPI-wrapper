@@ -44,7 +44,28 @@ while True:
         print(f"Remixes: {remixes}")
         print("=" * 50)
         print("\n")
-  if utility == "exit":
-    os.exit()
-  else:
-    print("thats not an option right now!")
+  if utility == "follower-wrapping-utility":
+    # url
+    url = f"https://api.scratch.mit.edu/users/{username}/followers/"
+    # get data
+    response = urllib.request.urlopen(url)
+    data = json.loads(response.read())
+    # display info
+    print("=" * 50)
+    print(f"Followers for {username}")
+    print("=" * 50)
+    
+    for follower in data:
+        follower_name = follower.get('username', 'Unknown')
+        
+        print("FOLLOWER USERNAME")
+        print("-" * 50)
+        print(f"{follower_name}")
+        
+        # If you want to fetch and display more follower details, add additional fields here
+        print("=" * 50)
+        print("\n")
+    if utility == "exit":
+      os.exit()
+    else:
+      print("thats not an option right now!")
