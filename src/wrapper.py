@@ -71,7 +71,7 @@ while True:
     # url
     url = f"https://api.scratch.mit.edu/users/{username}/favorites/"
     # get data
-    response = urlib.request.urlopen(url)
+    response = urllib.request.urlopen(url)
     data = json.loads(response.read())
     # display info
     print("=" * 50)
