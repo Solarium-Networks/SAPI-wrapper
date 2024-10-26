@@ -79,7 +79,7 @@ while True:
     print("=" * 50)
 
     for project in data:
-     title = project.get('title', 'N/A')
+     title = project.get('title')
      description = project.get('description')
       
      print("=" * 50)
@@ -90,15 +90,6 @@ while True:
      print("\nDESCRIPTION")
      print("-" * 50)
      print(f"{description}")
-        
-     print("\nSTATS")
-     print("-" * 50)
-     print(f"Hearts: {loves}")
-     print(f"Stars: {favorites}")
-     print(f"Views: {views}")
-     print(f"Remixes: {remixes}")
-     print("=" * 50)
-     print("\n")
     
   elif utility == "exit":
     os.exit()
